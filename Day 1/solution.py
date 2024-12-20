@@ -4,8 +4,7 @@
 
 import math
 
-# Handwritten binary sort for fun
-def binary_sort(input):
+def merge_sort(input):
 
     # Get size
     size = len(input)
@@ -13,8 +12,8 @@ def binary_sort(input):
     # Recursive case
     # If larger than 2, half and then sort
     if size > 2:
-        list1 = binary_sort(input[:size//2])
-        list2 = binary_sort(input[size//2:])
+        list1 = merge_sort(input[:size//2])
+        list2 = merge_sort(input[size//2:])
 
         # Combine sorted lists
         output_list = []
@@ -46,8 +45,8 @@ def binary_sort(input):
 
 def part1(list1, list2):
     # Sort lists
-    list1 = binary_sort(list1)
-    list2 = binary_sort(list2)
+    list1 = merge_sort(list1)
+    list2 = merge_sort(list2)
 
     # Find overall difference
     total = 0
